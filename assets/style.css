@@ -1,5 +1,9 @@
+@import "compass/css3";
 /* Base styles */
-
+:root {
+  --primary-color: #5f4b32;
+  --secondary-color: #faf0d9;
+}
 /* Font face and imports */
 @font-face {
   font-family: 'Bookerly';
@@ -11,6 +15,19 @@
 /* Navbar and container styles */
 .navbar {
   font-family: 'Bookerly', serif;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      font-size: 16px; /* Adjust as needed */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .navbar {
+      font-size: 14px; /* Adjust as needed */
+  }
 }
 
 .navbar-brand {
@@ -35,12 +52,12 @@
   width: 100%;
   max-width: 100%;
   height: 400px;
-  background-color: #faf0d9;
+  background-color: var(--secondary-color);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
-  color: #5f4b32;
+  color: var(--primary-color);
   font-family: 'Bookerly', serif;
   padding-top: 20%;
   font-size: 26px;
@@ -84,16 +101,17 @@
 .footer {
   text-align: center;
   padding: 10px;
-  background-color: rgb(95, 75, 50);
+  background-color: #222;
   border-top: 1px solid #ddd;
   position: fixed;
   bottom: 0;
   width: 100%;
   font-size: 14px;
-  color: #faf0d9;
+  color: var(--secondary-color);
   display: flex;
   gap: 30px;
   justify-content: center;
+
 }
 
 .footer p {
@@ -103,6 +121,38 @@
 .footer a { 
   text-decoration: none;
   color: white;
+}
+
+.glow_class {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+               0 0 20px rgba(255, 255, 255, 0.5),
+               0 0 30px rgba(255, 255, 255, 0.3);
+  transition: color 0.3s, text-shadow 0.3s;
+  animation: glowing 3s infinite;
+}
+
+@keyframes glowing {
+  0% {
+    color: #ffffff; /* Red */
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+    opacity: 0.8;
+  }
+  25% {
+    color: #ffb3ff; /* Magenta */
+    text-shadow: 0 0 5px #ffb3ff, 0 0 10px #ff00ff, 0 0 15px #ffb3ff;
+    opacity: 1;
+  }
+  75% {
+    color: #00ffff; /* Cyan */
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+    opacity: 1;
+  }
+  100% {
+    color: #00ff00; /* Green */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+    opacity: 0.8;
+  }
 }
 
 #portfolioButton {
@@ -166,8 +216,8 @@
   top: -310%; /* Position below the button */
   left: 40px; /* Align with the button */
   padding: 10px; /* Add some padding */
-  z-index: 1000; /* Ensure it appears on top */
-  background: white; /* Set background for dropdown */
+  z-index: 1000; 
+  background: white; 
   border-radius: 4px;
   display: none;
 }
@@ -188,7 +238,7 @@
 }
 
 .logo-4 h3 {
-  color: #5f4b32;
+  color: var(--primary-color);
   font-weight: 300;
   font-size: 50px;
   line-height: 0.65;
@@ -199,9 +249,9 @@
 .logo-4 p {
   font-size: 14px;
   margin-left: 80px;
-  color: #faf0d9;
-  background-color: #5f4b32;
-  border: #5f4b32;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: var(--primary-color);
   font-weight: 400;
   text-transform: capitalize;
   font-style: italic;
@@ -212,9 +262,9 @@
 .logo-4 p:hover {
   font-size: 14px;
   margin-left: 80px;
-  color: #faf0d9;
-  background-color: #5f4b32;
-  border: #5f4b32;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: var(--primary-color);
   font-weight: 400;
   text-transform: capitalize;
   font-style: italic;

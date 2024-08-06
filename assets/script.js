@@ -56,7 +56,7 @@ function downloadAsImage() {
         .then(function (dataUrl) {
             var link = document.createElement('a');
             link.href = dataUrl;
-            link.download = 'textarea-image.png';
+            link.download = 'thought.jpeg';
             link.click();
             document.querySelector('.download').classList.remove('placeholder-wave');
         })
@@ -114,18 +114,35 @@ document.addEventListener('click', function(event) {
         }
     }
 });
-
+const root = document.documentElement; 
+function removeGlowingEffectFromAll() {
+    const elements = document.querySelectorAll('.glowDisabled');
+    elements.forEach(element => {
+      element.classList.remove('glow_class'); 
+    });
+  }
+  
+  function addGlowingEffect() {
+    const elements = document.querySelectorAll('.glowDisabled');
+    elements.forEach(element => {
+      element.classList.add('glow_class'); 
+    });
+  }
+  
 
 $( document ).ready(function() {
-
     jQuery('.player').on('click', function () {
 
         if(jQuery(this).hasClass('active')) {
             jQuery(this).find('audio').trigger('pause');
+            const elements = document.querySelectorAll('.glowDisabled');
+            removeGlowingEffectFromAll();
             jQuery(this).removeClass('active');
         } else {
             jQuery(this).find('audio').trigger('play');
             jQuery(this).addClass('active');
+            addGlowingEffect();
+
         }
     });
 
