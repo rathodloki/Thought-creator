@@ -1,0 +1,356 @@
+/* Base styles */
+
+/* Font face and imports */
+@font-face {
+  font-family: 'Bookerly';
+  src: url('assets/fonts/bookerly-cufonfonts/Bookerly.ttf') format('woff2');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Bangers|Cinzel:400,700,900|Lato:100,300,400,700,900|Lobster|Lora:400,700|Mansalva|Muli:200,300,400,600,700,800,900|Open+Sans:300,400,600,700,800|Oswald:200,300,400,500,600,700|Roboto:100,300,400,500,700,900&display=swap');
+
+/* Navbar and container styles */
+.navbar {
+  font-family: 'Bookerly', serif;
+}
+
+.navbar-brand {
+  font-family: 'Bookerly', serif;  
+}
+
+.container {
+  display: flex; 
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;  
+  margin-bottom: 50px;
+}
+
+.main {
+  width: 400px;
+  max-width: 400px;
+}
+
+.container textarea {
+  width: 100%;
+  max-width: 100%;
+  height: 400px;
+  background-color: #faf0d9;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  color: #5f4b32;
+  font-family: 'Bookerly', serif;
+  padding-top: 20%;
+  font-size: 26px;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  resize: none;
+  text-decoration: none;
+  outline-width: 0;
+  color: rgba(255, 255, 255);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.container textarea::placeholder {
+  color: rgba(255, 255, 255);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.group {
+  margin-top: 20px;
+  display: flex; 
+  justify-content: center;
+  gap: 10px;
+}
+
+.container .group .download {  
+  flex-grow: 1;
+  width: 100%;
+}
+
+.container .group .align-button {  
+  flex-grow: 1;
+  width: 100px;
+}
+
+#refresh-image-button {
+  border: white;
+  filter: brightness(70%);
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(95, 75, 50);
+  border-top: 1px solid #ddd;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  color: #faf0d9;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.footer p {
+  margin: 10px 0;
+}
+
+.footer a { 
+  text-decoration: none;
+  color: white;
+}
+
+#portfolioButton {
+  position: relative;
+  top: 15px;
+}
+
+#portfolioButton:before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+      120deg,
+      rgba(255,255,255, 0) 30%,
+      rgba(255,255,255, .8),
+      rgba(255,255,255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {left: -40px}
+  20% {left: 100%}
+  100% {left: 100%}
+}
+
+.form-range {
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+}
+
+.dropdown-menu .show {
+  display: none !important;
+}
+
+#rangeInput {
+  display: none;
+}
+
+#range-button:hover input[type="range"] {
+  display: block;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: -310%; /* Position below the button */
+  left: 40px; /* Align with the button */
+  padding: 10px; /* Add some padding */
+  z-index: 1000; /* Ensure it appears on top */
+  background: white; /* Set background for dropdown */
+  border-radius: 4px;
+  display: none;
+}
+
+.dropdown-content input[type="range"] {
+  display: block; /* Show the range input */
+  appearance: slider-vertical; /* For vertical slider appearance */
+  writing-mode: bt-lr; /* Vertical range input */
+  height: 100px; /* Adjust height as needed */
+  width: 8px; /* Adjust width as needed */
+}
+
+.logo-holder {
+  text-align: center;
+  margin-top: 15px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.logo-4 h3 {
+  color: #5f4b32;
+  font-weight: 300;
+  font-size: 50px;
+  line-height: 0.65;
+  font-family: 'Lobster', cursive;
+  text-decoration: none !important;
+}
+
+.logo-4 p {
+  font-size: 14px;
+  margin-left: 80px;
+  color: #faf0d9;
+  background-color: #5f4b32;
+  border: #5f4b32;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-style: italic;
+  text-decoration: none !important;
+  font-family: 'Mansalva', cursive;
+}
+
+.logo-4 p:hover {
+  font-size: 14px;
+  margin-left: 80px;
+  color: #faf0d9;
+  background-color: #5f4b32;
+  border: #5f4b32;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-style: italic;
+  text-decoration: none !important;
+  font-family: 'Mansalva', cursive;
+}
+
+.player {
+  color: white;
+  position: absolute;
+  left: 100px;
+  top: 10px;
+  border-radius: 100%;
+  border: 2px;
+  width: 40px;
+  height: 40px;
+  background-color: #6c757d;
+  padding: 14px;
+}
+
+.player:before,
+.player:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.player:before {
+  animation: ripple 2s linear infinite;
+}
+
+.player:after {
+  animation: ripple 2s linear 1s infinite;
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.player.active .play {
+  display: none;
+}
+
+.player.active .pause {
+  display: block;
+}
+
+.player .play {
+  display: block;
+}
+
+.player .pause {
+  display: none;
+}
+
+.custom-popover .popover-header {
+  display: none;
+}
+
+.custom-popover .popover-arrow {
+  display: none;
+}
+
+.custom-popover .popover-body {
+  padding: 0;
+  background-color: transparent;
+}
+
+.custom-popover img {
+  width: 150px;
+  height: 150px;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Responsive styles for tablets and mobile devices */
+
+@media (max-width: 768px) {
+  .main {
+      width: 90%;
+      max-width: 90%;
+  }
+
+  .container textarea {
+      width: 100%;
+      font-size: 20px;
+      padding-top: 10%;
+  }
+
+  .footer {
+      font-size: 12px;
+      padding: 8px;
+  }
+
+  .logo-4 h3 {
+      font-size: 40px;
+  }
+
+  .logo-4 p {
+      margin-left: 0;
+      font-size: 12px;
+  }
+
+  .player {
+      width: 30px;
+      height: 30px;
+      padding: 10px;
+      left: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      margin-bottom: 20px;
+  }
+
+  .container textarea {
+      height: 300px;
+      font-size: 16px;
+      padding-top: 5%;
+  }
+
+  .footer {
+      font-size: 10px;
+      padding: 6px;
+  }
+
+  .logo-4 h3 {
+      font-size: 30px;
+  }
+
+  .logo-4 p {
+      font-size: 10px;
+  }
+
+  .player {
+      width: 25px;
+      height: 25px;
+      padding: 8px;
+      left: 30px;
+  }
+}
