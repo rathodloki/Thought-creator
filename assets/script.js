@@ -157,3 +157,12 @@ document.addEventListener('DOMContentLoaded', function () {
       })
     })
   });
+
+  document.getElementById('showPortfolioButton').addEventListener('click', function() {
+    var portfolioButton = document.getElementById('portfolioButton');
+    if (portfolioButton.style.display === 'none' || portfolioButton.style.display === '') {
+      portfolioButton.style.display = 'block';
+    } else {
+      portfolioButton.style.display = 'none';
+    }
+  });
