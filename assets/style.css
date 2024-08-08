@@ -4,11 +4,6 @@
   --primary-color: #eee;
   --secondary-color: #222;
 }
-/* Font face and imports */
-@font-face {
-  font-family: 'Bookerly';
-  src: url('assets/fonts/bookerly-cufonfonts/Bookerly.ttf') format('woff2');
-}
 
 @import url('https://fonts.googleapis.com/css?family=Bangers|Cinzel:400,700,900|Lato:100,300,400,700,900|Lobster|Lora:400,700|Mansalva|Muli:200,300,400,600,700,800,900|Open+Sans:300,400,600,700,800|Oswald:200,300,400,500,600,700|Roboto:100,300,400,500,700,900&display=swap');
 
@@ -17,7 +12,6 @@ body{
 }
 /* Navbar and container styles */
 .navbar {
-  font-family: 'Bookerly', serif;
   height: 110px;
 }
 
@@ -45,20 +39,15 @@ body{
   }
 }
 
-.navbar-brand {
-  font-family: 'Bookerly', serif;  
-  margin-top: 10px;
-}
-
 .container {
   display: flex; 
   justify-content: center;
   flex-direction: column;
   align-items: center;
   height: 80vh;  
-  margin-bottom: 50px;
-}
+  margin: 50px 0 100px 0; 
 
+}
 .main {
   width: 400px;
   max-width: 400px;
@@ -261,6 +250,7 @@ body{
   font-style: italic;
   text-decoration: none !important;
   font-family: 'Mansalva', cursive;
+  pointer-events: none;
 }
 
 .logo-4 p:hover {
@@ -274,7 +264,9 @@ body{
   font-style: italic;
   text-decoration: none !important;
   font-family: 'Mansalva', cursive;
+  pointer-events: none;
 }
+
 
 .player {
   color: white;
